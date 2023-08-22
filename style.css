@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-container {
+    width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.grid-square {
+    background-color: black;
+    border: 1px solid white;
+    flex-basis: calc(100% / 16);
+    aspect-ratio: 1;
+}
