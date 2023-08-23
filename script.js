@@ -5,6 +5,9 @@ function addSquare() {
 
     const square = document.createElement('div');
     square.classList.add('grid-square');
+    square.addEventListener('mouseover', () => {
+        square.classList.add('grid-square-red')
+    })
 
     grid.appendChild(square);
 }
@@ -13,3 +16,5 @@ function addSquare() {
 for (let i = 0; i < 256; i++) {
     addSquare();
 }
+
+

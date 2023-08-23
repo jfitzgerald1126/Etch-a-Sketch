@@ -24,3 +24,11 @@ body {
     flex-basis: calc(100% / 16);
     aspect-ratio: 1;
 }
+
+.grid-square-red {
+    background-color: red;
+}
+
+/* .grid-square:hover {
+    background-color: aqua;
+} */
