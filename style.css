@@ -32,6 +32,10 @@ body {
     background-color: aquamarine;
 }
 
+.btn-on {
+    background-color: green;
+}
+
 .grid-container {
     width: 600px;
     height: 600px;
