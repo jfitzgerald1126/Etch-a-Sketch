@@ -1,6 +1,7 @@
 // globals
 let isMouseDown = false;
 let gridSize = 16;
+let color = 'red';
 
 // create and append square to grid
 function addSquare() {
@@ -11,7 +12,8 @@ function addSquare() {
 
     // Use mousedown event to start tracking mouse state
     square.addEventListener('mousedown', () => {
-        square.classList.add('grid-square-red');
+        // square.classList.add('grid-square-red');
+        square.style.backgroundColor = color;
         isMouseDown = true;
     });
 
@@ -21,7 +23,8 @@ function addSquare() {
     });
     
     square.addEventListener('mouseover', () => {
-        if (isMouseDown) square.classList.add('grid-square-red');
+        // if (isMouseDown) square.classList.add('grid-square-red');
+        square.style.backgroundColor = color;
     })
 
     grid.appendChild(square);
