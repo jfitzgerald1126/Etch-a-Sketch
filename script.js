@@ -2,6 +2,7 @@
 let isMouseDown = false;
 let gridSize = 16;
 let color = 'red';
+let isRandom = false;
 
 // create and append square to grid
 function addSquare() {
@@ -12,7 +13,6 @@ function addSquare() {
 
     // Use mousedown event to start tracking mouse state
     square.addEventListener('mousedown', () => {
-        // square.classList.add('grid-square-red');
         square.style.backgroundColor = color;
         isMouseDown = true;
     });
@@ -23,8 +23,14 @@ function addSquare() {
     });
     
     square.addEventListener('mouseover', () => {
-        // if (isMouseDown) square.classList.add('grid-square-red');
-        square.style.backgroundColor = color;
+        if (color === 'random') {
+            const red = Math.floor(Math.random() * 255);
+            const green = Math.floor(Math.random() * 255);
+            const blue = Math.floor(Math.random() * 255);
+            square.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+        } else {
+            square.style.backgroundColor = color;
+        }
     })
 
     grid.appendChild(square);
@@ -66,6 +72,19 @@ clearButton.addEventListener('click', () => {
     clearGrid();
     drawGrid(gridSize);
 });
+
+const randomButton = document.querySelector('.random');
+randomButton.addEventListener('click', () => {
+    if (isRandom) {
+        color = 'red';
+        randomButton.classList.remove('btn-on');
+        isRandom = false;
+    } else {
+        color = 'random';
+        randomButton.classList.add('btn-on');
+        isRandom = true;
+    }
+})
 
 
 
