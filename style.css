@@ -7,21 +7,42 @@
 
 body {
     height: 100vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: grey;
+}
+
+.center-grid {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+.btn {
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    text-align: center;
+    background-color: aqua;
+}
+
+.btn:hover {
+    background-color: aquamarine;
+}
+
 .grid-container {
-    width: 500px;
+    width: 600px;
+    height: 600px;
     display: flex;
     flex-wrap: wrap;
 }
 
 .grid-square {
     background-color: black;
-    border: 1px solid white;
-    flex-basis: calc(100% / 16);
+    /* border: 1px solid white; */
+    flex-basis: calc(100% / var(--grid-side));
     aspect-ratio: 1;
 }
 
